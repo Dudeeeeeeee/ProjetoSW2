@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="bg-primary text-white p-3 text-center">
-        <h1>Cadastro de Formas de pagamento</h1>
+        <h1>Cadastro de fornecedor</h1>
     </div>
 
     <div class="container">
@@ -22,16 +22,15 @@
                 include "conexao.php";
                 
                 $nome = $_REQUEST["nome"];
-               
+                
+echo "nome do fornecedor: $nome <br>";
 
-echo "nome da forma de pagamento: $nome <br>";
-
-        $sql = "insert into formapagamento(nome)
+        $sql = "insert into fornecedor(nome)
                 values (:nome)";
         $result = $conexao->prepare($sql);
         $result ->bindValue(":nome", $nome);
         $result ->execute();
-        echo "<p> A forma de pagamento foi cadastrada com sucesso!</p>";
+        echo "<p> O fornecedor foi cadastrado com sucesso!</p>";
         ?>
             </div>
         </div>

@@ -25,9 +25,9 @@
                         <input type="text" name="categoria" class="form-control" >
                     </p>
                     <p>
-                        <input type="submit" value="Cadastrar">
-                        <input type="reset" value="Limpar">
-                        <a href="index.php">Voltar</a>
+                    <input type="submit" value="Cadastrar" class="btn btn-primary">
+                        <input type="reset" value="Limpar" class="btn btn-success">
+                        <a href="index.php" class="btn btn-secondary">Voltar</a>
                     </p>
                 </from>
 

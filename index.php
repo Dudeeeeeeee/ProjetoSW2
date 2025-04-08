@@ -66,6 +66,13 @@
         <p> 
             <a href="vendas.php" class= "btn btn-secondary">Clique</a>
 </P>
+
+    <h1 class="bg-danger">Forma de Pagamento</h1>
+    <p class="text-danger">
+        Utilize esta opção escolher uma forma de pagamento.
+        <p> 
+            <a href="formapagamento.php" class= "btn btn-danger">Clique</a>
+</P>
     </P>
 
 </div>
