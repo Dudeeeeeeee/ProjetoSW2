@@ -35,7 +35,8 @@
         <h1 class="bg-danger text-">Categorias</h1>
         <p class="text-danger"> Utilize esta opção para cadastrar as categorias dos produtos que serão vendidos on-line.
         <p> 
-            <a href="categorias.php" class= "btn btn-danger">Clique</a>
+            <a href="categoria.php" class= "btn btn-danger">Clique</a>
+            <a href="categoria_pesquisa.php" class= "btn btn-danger">Pesquisa</a>
 </P>
     </p>
     </div>

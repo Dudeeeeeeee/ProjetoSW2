@@ -17,9 +17,7 @@
 
     <table class="table">
             <tr>
-                <th>Codigo</th>
-                <th>Nome</th>
-                <th>Login</th>
+                <th>Categoria</th>
             </tr>
 
         <?php
@@ -35,9 +33,7 @@
         ?>
 
             <tr>
-            <td><?= $linha["codigo"] ?></td> 
-            <td><?= $linha["nome"] ?></td>
-            <td><?= $linha["login"] ?></td>
+            <td><?= $linha["categoria"] ?></td> 
             </tr>
 
             <?php
