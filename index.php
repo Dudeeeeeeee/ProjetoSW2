@@ -27,6 +27,7 @@
         utilize esta opção para realizar o cadastro de novos administradores, ou edita-los.
         <p> 
             <a href="administrador.php" class= "btn btn-primary">Clique</a>
+            <a href="administrador_pesquisa.php" class= "btn btn-primary">Pesquisa</a>
 </P>
         </p>
     </div>
