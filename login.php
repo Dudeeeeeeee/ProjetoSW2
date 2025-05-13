@@ -38,7 +38,16 @@
 
             </p>
             <p class="text-danger">
+            <?php   
+                session_start();
 
+                if(isset($_SESSION["erro"]));
+
+                {
+                    echo $_SESSION["erro"];
+                }
+
+?>
             </form>
 
         </div>
