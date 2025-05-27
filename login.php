@@ -44,7 +44,7 @@
                 if(isset($_SESSION["erro"]));
 
                 {
-                    echo $_SESSION["erro"];
+                    echo ($_SESSION["erro"]);
                 }
 
 ?>
