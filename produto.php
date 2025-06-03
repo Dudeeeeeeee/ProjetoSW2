@@ -1,14 +1,3 @@
-<?php
-
-session_start();
-
-if (!isset($_SESSION["nome"]) )
-{
-    header("location: login.php");
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +9,7 @@ if (!isset($_SESSION["nome"]) )
 </head>
 <body>
     <div class="bg-warning text-white p-3 text-center">
-        <h1>Cadastro de Administradores</h1>
+        <h1>Cadastro de Produtos</h1>
     </div>
 
     <div class="container">
@@ -29,14 +18,18 @@ if (!isset($_SESSION["nome"]) )
 
                 <h3 class="text-center p-3">Preencha os dados abaixo</h3>
 
-                <from action="#">
+                <form action="produto_cadastro.php">
 
                     <p>
-                        Descrição<br>
+                        Descrição do Produto<br>
                         <input type="text" name="categoria" class="form-control" >
                     </p>
                     <p>
                         Preço de venda<br>
+                        <input type="text" name="preco" class="form-control" >
+                    </p>
+                    <p>
+                        Preço de custo<br>
                         <input type="text" name="preco" class="form-control" >
                     </p>
                     <p>
@@ -48,9 +41,9 @@ if (!isset($_SESSION["nome"]) )
                         <input type="text" name="fornecedor" class="form-control" >
                     </p>
                     <p>
-                    <input type="submit" value="Cadastrar" class="btn btn-primary">
-                        <input type="reset" value="Limpar" class="btn btn-success">
-                        <a href="index.php" class="btn btn-secondary">Voltar</a>
+                        <input type="submit" value="Cadastrar" class="btn btn-warning">
+                        <input type="reset" value="Limpar" class="btn btn-warning">
+                        <a href="index.php" class="btn btn-warning">Voltar</a>
                     </p>
                 </from>
 

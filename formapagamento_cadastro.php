@@ -29,21 +29,27 @@ if (!isset($_SESSION["nome"]) )
 
             <div class="row">
                 <div class="col-sm-8 mx-auto mt-3 border border-primary">
-                <h3>Preencha os dados abaixo</h3>
+                <h3 class="text-center p-3">Confirmação do Cadastro</h3>
 
-                <form action="formapagamento_cadastro.php">
+                <div>
+                    <?php 
+                       include "conexao.php";
 
-                    <p>
-                    Digite o nome da forma de pagamento:<br>
-                        <input type="text" name="nomeformadepagamento" class="form-control">
-                    </p>
+                        $nome = $_REQUEST["nomeformadepagamento"];
 
-                    <p>
-                        <input type="submit" value="Cadastrar" class="btn btn-primary">
-                        <input type="reset" value="Limpar" class="btn btn-success">
-                        <a href="index.php" class="btn btn-secondary">Voltar</a>
-                    </p>
-                </form>
+                        echo "Nome do da Forma de Pagamento: $nome <br>";
+
+                        $sql = "insert into formapagamento(nome)
+                                values (:nome)";
+
+                        $result = $conexao->prepare($sql);
+                        $result->bindValue(":nome", $nome);
+                        $result->execute();
+
+                        echo "<p>A forma de pagamento foi cadastrada com sucesso!</p>"
+
+                    ?>
+               
                 </div>
             </div>
     </div>

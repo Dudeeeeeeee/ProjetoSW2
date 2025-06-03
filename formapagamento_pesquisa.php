@@ -25,7 +25,7 @@
                     <?php
                         include "conexao.php";
 
-                        $sql = "select * from categoria";
+                        $sql = "select * from pagamento";
 
                         $result = $conexao->prepare($sql);
                         $result->execute();

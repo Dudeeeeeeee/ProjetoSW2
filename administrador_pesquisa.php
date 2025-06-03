@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,47 +9,47 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
+    
     <div class="bg-primary text-white p-3 text-center">
         <h1>Pesquisa de Administradores</h1>
-</div>
-<div class="container">
-    <div class="row">
+    </div>
+
+    <div class="container">
+        <div class="row">
             <div class="col-sm-8 mx-auto">
 
-    <table class="table">
-            <tr>
-                <th>Codigo</th>
-                <th>Nome</th>
-                <th>Login</th>
-            </tr>
+                <table class="table">
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Nome</th>   
+                        <th>Login</th>
+                    </tr>
+                    <?php
+                        include "conexao.php";
 
-        <?php
-        include "conexao.php";
+                        $sql = "select * from administrador";
 
-        $sql = "select * from administrador";
+                        $result = $conexao->prepare($sql);
+                        $result->execute();
 
-        $result = $conexao->prepare($sql);
-        $result->execute();
+                        while ( $linha = $result->fetch(PDO::FETCH_ASSOC) )
+                        {
+                    ?>
+                    <tr>
+                        <td><?= $linha["codigo"]?></td>
+                        <td><?= $linha["nome"]?></td>
+                        <td><?= $linha["login"]?></td>
+                    </tr>
+                    <?php
+                        }
+                    ?>
+                </table>
 
-        while ( $linha = $result->fetch(PDO::FETCH_ASSOC) )
-        { 
-        ?>
-
-            <tr>
-            <td><?= $linha["codigo"] ?></td> 
-            <td><?= $linha["nome"] ?></td>
-            <td><?= $linha["login"] ?></td>
-            </tr>
-
-            <?php
-        }
-            ?>
-        </table>
-<p>
-    <a href="index.php" class="btn btn-primary">Voltar</a>
-    </p>
+                <p>
+                    <a href="index.php" class="btn btn-primary">Voltar</a>
+                </p>
+            </div>
         </div>
     </div>
-</div>
 </body>
 </html>

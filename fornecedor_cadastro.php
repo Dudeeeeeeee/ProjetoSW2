@@ -22,28 +22,34 @@ if (!isset($_SESSION["nome"]) )
 <body>
     
     <div class="bg-primary text-white p-3 text-center">
-        <h1>Cadastro de Formas de Pagamento</h1>
+        <h1>Cadastro de Fornecedores</h1>
     </div>
 
     <div class="container">
 
             <div class="row">
                 <div class="col-sm-8 mx-auto mt-3 border border-primary">
-                <h3>Preencha os dados abaixo</h3>
+                <h3 class="text-center p-3">Confirmação do Cadastro</h3>
 
-                <form action="formapagamento_cadastro.php">
+                <div>
+                    <?php 
+                       include "conexao.php";
 
-                    <p>
-                    Digite o nome da forma de pagamento:<br>
-                        <input type="text" name="nomeformadepagamento" class="form-control">
-                    </p>
+                        $nome = $_REQUEST["nomefornecedor"];
 
-                    <p>
-                        <input type="submit" value="Cadastrar" class="btn btn-primary">
-                        <input type="reset" value="Limpar" class="btn btn-success">
-                        <a href="index.php" class="btn btn-secondary">Voltar</a>
-                    </p>
-                </form>
+                        echo "Nome do Fornecedor: $nome <br>";
+
+                        $sql = "insert into fornecedor(nome)
+                                values (:nome)";
+
+                        $result = $conexao->prepare($sql);
+                        $result->bindValue(":nome", $nome);
+                        $result->execute();
+
+                        echo "<p>O fornecedor foi cadastrado com sucesso!</p>"
+
+                    ?>
+               
                 </div>
             </div>
     </div>

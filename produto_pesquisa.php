@@ -25,7 +25,7 @@
                     <?php
                         include "conexao.php";
 
-                        $sql = "select * from categoria";
+                        $sql = "select * from produto";
 
                         $result = $conexao->prepare($sql);
                         $result->execute();
@@ -35,7 +35,11 @@
                     ?>
                     <tr>
                         <td><?= $linha["codigo"] ?></td>
-                        <td><?= $linha["nome"] ?></td>
+                        <td><?= $linha["descricao"] ?></td>
+                        <td><?= $linha["precocusto"] ?></td>
+                        <td><?= $linha["precovenda"] ?></td>
+                        <td><?= $linha["codcategoria"] ?></td>
+                        <td><?= $linha["codfornecedor"] ?></td>
                     </tr>
                     <?php
                         }
