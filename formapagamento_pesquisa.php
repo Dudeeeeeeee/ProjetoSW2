@@ -28,7 +28,7 @@
                         $sql = "select * from pagamento";
 
                         $result = $conexao->prepare($sql);
-                        $result->execute();
+                       
 
                         while ( $linha = $result->fetch(PDO::FETCH_ASSOC))
                         {
